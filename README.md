@@ -14,7 +14,7 @@ Icy is developed and maintained by [Biological Image Analysis unit at Institut P
 ## Plugin description
 
 <!-- Short description of goals of package, with descriptive links to the documentation website --> 
-
+Clip time processor for the Track Manager plugin
         
 A more detailed user documentation can be found on the Track Processor Time Clip documentation page on the Icy website: http://icy.bioimageanalysis.org/plugin/track-processor-time-clip/               
 
