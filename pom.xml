@@ -6,10 +6,10 @@
 
     <!-- Inherited Icy Parent POM -->
     <parent>
+		<artifactId>pom-icy</artifactId>
         <groupId>org.bioimageanalysis.icy</groupId>
-        <artifactId>parent-pom-plugin</artifactId>
-        <version>1.0.3</version>
-    </parent>
+        <version>2.0.0</version>
+	</parent>
 
     <!-- Project Information -->
     <artifactId>track-processor-time-clip</artifactId>
@@ -58,10 +58,14 @@
 
     </properties>
 
-    <!-- Project build configuration -->
-    <build>
-
-    </build>
+    <profiles>
+        <profile>
+            <id>icy-plugin</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
 
     <!-- List of project's dependencies -->
     <dependencies>
@@ -69,12 +73,13 @@
         <dependency>
             <groupId>org.bioimageanalysis.icy</groupId>
             <artifactId>icy-kernel</artifactId>
+			<version>${icy-kernel.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.bioimageanalysis.icy</groupId>
             <artifactId>track-manager</artifactId>
-            <version>1.4.6</version>
+            <version>${track-manager.version}</version>
         </dependency>
     </dependencies>
 
