@@ -8,18 +8,16 @@
     <parent>
 		<artifactId>pom-icy</artifactId>
         <groupId>org.bioimageanalysis.icy</groupId>
-        <version>2.0.0</version>
+        <version>3.0.0-a.4</version>
 	</parent>
 
     <!-- Project Information -->
     <artifactId>track-processor-time-clip</artifactId>
-    <version>1.0.1</version>
-
-    <packaging>jar</packaging>
+    <version>2.0.0-a.1</version>
 
     <name>Track Processor Time Clip</name>
     <description>Clip time processor for the Track Manager plugin </description>
-    <url>icy.bioimageanalysis.org/plugin/track-processor-time-clip/</url>
+    <url>https://icy.bioimageanalysis.org/plugin/track-processor-time-clip/</url>
     <inceptionYear>2020</inceptionYear>
 
     <organization>
@@ -53,42 +51,15 @@
         </developer>
     </developers>
 
-    <!-- Project properties -->
-    <properties>
-
-    </properties>
-
-    <profiles>
-        <profile>
-            <id>icy-plugin</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-        </profile>
-    </profiles>
-
     <!-- List of project's dependencies -->
     <dependencies>
-        <!-- The core of Icy -->
         <dependency>
             <groupId>org.bioimageanalysis.icy</groupId>
-            <artifactId>icy-kernel</artifactId>
-			<version>${icy-kernel.version}</version>
+            <artifactId>spot-detection-utilities</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.bioimageanalysis.icy</groupId>
             <artifactId>track-manager</artifactId>
-            <version>${track-manager.version}</version>
         </dependency>
     </dependencies>
-
-    <!-- Icy Maven repository (to find parent POM) -->
-    <repositories>
-        <repository>
-            <id>icy</id>
-            <name>Icy's Nexus</name>
-            <url>https://icy-nexus.pasteur.fr/repository/Icy/</url>
-        </repository>
-    </repositories>
 </project>
