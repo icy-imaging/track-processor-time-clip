@@ -18,15 +18,14 @@
 
 package plugins.fab.trackmanager.processors;
 
-import org.bioimageanalysis.icy.Icy;
-import org.bioimageanalysis.icy.extension.plugin.annotation_.IcyPluginIcon;
-import org.bioimageanalysis.icy.extension.plugin.annotation_.IcyPluginName;
-import org.bioimageanalysis.icy.gui.viewer.Viewer;
-import org.bioimageanalysis.icy.gui.viewer.ViewerEvent;
-import org.bioimageanalysis.icy.gui.viewer.ViewerListener;
-import org.bioimageanalysis.icy.model.sequence.Sequence;
-import org.bioimageanalysis.icy.model.sequence.SequenceEvent;
-import org.bioimageanalysis.icy.model.sequence.SequenceListener;
+import fr.icy.Icy;
+import fr.icy.extension.plugin.annotation_.IcyPluginName;
+import fr.icy.gui.viewer.Viewer;
+import fr.icy.gui.viewer.ViewerEvent;
+import fr.icy.gui.viewer.ViewerListener;
+import fr.icy.model.sequence.Sequence;
+import fr.icy.model.sequence.SequenceEvent;
+import fr.icy.model.sequence.SequenceListener;
 import plugins.fab.trackmanager.PluginTrackManagerProcessor;
 import plugins.fab.trackmanager.TrackSegment;
 import plugins.nchenouard.spot.Detection;
@@ -43,7 +42,6 @@ import java.util.ArrayList;
  * WARNING: BETA Version
  */
 @IcyPluginName("Track Clipper")
-@IcyPluginIcon(path = "/plugins/fab/trackmanager/processors/Track_Processor_Time_Clip.png")
 public class TrackProcessorTimeClip extends PluginTrackManagerProcessor implements ActionListener, SequenceListener, ViewerListener {
 
     JTextField clipTextField = new JTextField("  3");
@@ -98,7 +96,7 @@ public class TrackProcessorTimeClip extends PluginTrackManagerProcessor implemen
             final ArrayList<Viewer> viewerList = Icy.getMainInterface().getViewers(trackPool.getDisplaySequence());
             int t;// = 0;
             try {
-                t = viewerList.getFirst().getPositionT();
+                t = viewerList.get(0).getPositionT();
             }
             catch (final IndexOutOfBoundsException | NullPointerException e) {
                 t = 0;
